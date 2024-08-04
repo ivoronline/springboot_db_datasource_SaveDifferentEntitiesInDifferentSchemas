@@ -21,7 +21,7 @@ import javax.sql.DataSource;
   transactionManagerRef   = "schema2TransactionManager"
 )
 public class Schema2Config {
-
+  
   //=========================================================================================================
   // DATA SOURCE PROPERTIES
   //=========================================================================================================
@@ -45,10 +45,10 @@ public class Schema2Config {
   @Bean
   LocalContainerEntityManagerFactoryBean schema2EntityManagerFactoryBean (
     EntityManagerFactoryBuilder entityManagerFactoryBuilder,
-    @Qualifier("schema1DataSource") DataSource                  dataSource
+    @Qualifier("schema2DataSource") DataSource dtaSource
   ) {
     return entityManagerFactoryBuilder
-          .dataSource(dataSource)
+          .dataSource(dtaSource)
           .packages("com.ivoronline.springboot_db_datasource_diffentitiesdiffschemas.schema2.entity")
           .build();
   }

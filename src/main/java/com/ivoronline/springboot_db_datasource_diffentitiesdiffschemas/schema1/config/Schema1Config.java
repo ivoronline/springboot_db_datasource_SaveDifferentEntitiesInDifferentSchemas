@@ -6,14 +6,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import javax.sql.DataSource;
-import java.util.HashMap;
 
 @Configuration
 @EnableJpaRepositories(
@@ -47,10 +44,10 @@ public class Schema1Config {
   @Bean
   LocalContainerEntityManagerFactoryBean schema1EntityManagerFactoryBean (
     EntityManagerFactoryBuilder entityManagerFactoryBuilder,
-    @Qualifier("schema1DataSource") DataSource                  dataSource
+    @Qualifier("schema1DataSource") DataSource dtaSource
   ) {
     return entityManagerFactoryBuilder
-          .dataSource(dataSource)
+          .dataSource(dtaSource)
           .packages("com.ivoronline.springboot_db_datasource_diffentitiesdiffschemas.schema1.entity")
           .build();
   }
@@ -61,11 +58,6 @@ public class Schema1Config {
   @Bean
   PlatformTransactionManager schema1TransactionManager(@Qualifier("schema1EntityManagerFactoryBean") LocalContainerEntityManagerFactoryBean emfb) {
     return new JpaTransactionManager(emfb.getObject());
-  }
-
-  @Bean
-  public EntityManagerFactoryBuilder entityManagerFactoryBuilder() {
-     return new EntityManagerFactoryBuilder(new HibernateJpaVendorAdapter(), new HashMap<>(), null);
   }
 
 }
