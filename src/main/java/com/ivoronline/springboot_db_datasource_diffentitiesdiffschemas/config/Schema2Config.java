@@ -36,7 +36,6 @@ public class Schema2Config {
   // DATA SOURCE
   //=========================================================================================================
   @Bean
-  @Primary
   public DataSource schema2DataSource() {
     return schema2DataSourceProperties().initializeDataSourceBuilder().build();
   }
@@ -51,7 +50,7 @@ public class Schema2Config {
   ) {
     return entityManagerFactoryBuilder
           .dataSource(dataSource)
-          .packages("com.ivoronline.diffentitiesindiffschemas.schema2.entity")
+          .packages("com.ivoronline.springboot_db_datasource_diffentitiesdiffschemas.schema2.entity")
           .build();
   }
   

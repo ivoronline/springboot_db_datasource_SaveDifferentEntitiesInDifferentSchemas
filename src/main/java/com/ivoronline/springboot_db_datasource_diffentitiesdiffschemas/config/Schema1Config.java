@@ -49,7 +49,7 @@ public class Schema1Config {
   ) {
     return entityManagerFactoryBuilder
           .dataSource(dataSource)
-          .packages("com.ivoronline.diffentitiesindiffschemas.schema1.entity")
+          .packages("com.ivoronline.springboot_db_datasource_diffentitiesdiffschemas.schema1.entity")
           .build();
   }
 
