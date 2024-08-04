@@ -1,4 +1,4 @@
-package com.ivoronline.springboot_db_datasource_diffentitiesdiffschemas.config;
+package com.ivoronline.springboot_db_datasource_diffentitiesdiffschemas.schema2.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;

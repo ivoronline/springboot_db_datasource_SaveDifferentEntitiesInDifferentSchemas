@@ -1,4 +1,4 @@
-package com.ivoronline.springboot_db_datasource_diffentitiesdiffschemas.config;
+package com.ivoronline.springboot_db_datasource_diffentitiesdiffschemas.schema1.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
@@ -6,7 +6,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -34,7 +33,6 @@ public class Schema1Config {
   // DATA SOURCE
   //=========================================================================================================
   @Bean
-  @Primary
   public DataSource schema1DataSource() {
     return schema1DataSourceProperties().initializeDataSourceBuilder().build();
   }
