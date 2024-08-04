@@ -1,4 +1,4 @@
-package com.ivoronline.springboot_db_datasource_savedifferententitiesindifferentschemas.schema2.entity;
+package com.ivoronline.springboot_db_datasource_diffentitiesdiffschemas.schema2.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
