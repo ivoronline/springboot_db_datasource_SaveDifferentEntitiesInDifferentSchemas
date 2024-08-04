@@ -20,8 +20,8 @@ public class MyRunner implements CommandLineRunner {
   //=========================================================================================================
   @Override
   public void run(String... args) {
-    personRepository.save (new Person (0, "John"  , 20         ));
-    addressRepository.save(new Address(0, "London", "Picadilly"));
+    personRepository.save (new Person (0, "John"  , 20          ));
+    addressRepository.save(new Address(0, "London", "Piccadilly"));
   }
 
 }
