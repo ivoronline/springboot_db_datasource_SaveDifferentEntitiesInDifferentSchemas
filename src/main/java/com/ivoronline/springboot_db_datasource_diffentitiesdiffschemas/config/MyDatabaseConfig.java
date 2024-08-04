@@ -7,7 +7,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import java.util.HashMap;
 
 @Configuration
-public class MyDBConfig {
+public class MyDatabaseConfig {
   
   //=========================================================================================================
   // ENTITY MANAGER FACTORY BUILDER
